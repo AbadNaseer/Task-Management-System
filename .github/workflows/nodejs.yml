@@ -21,6 +21,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm index.js
+    - run: npm start
       # This will run the test command from your package.json.
       # Make sure to update the test command in package.json to run actual tests.
