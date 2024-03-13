@@ -4,10 +4,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3030;
 // Connect to MongoDB using the URI from config.js
-mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+mongoose.connect(process.env.DATABASE_URL)
       .then(() => {
         console.log('MongoDB connected');
       })
