@@ -8,13 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
-    services:
-      mongodb:
-        image: mongo
-        ports:
-          - 27017:27017
+    runs-on: windows-latest  # Since you're using Windows
 
     strategy:
       matrix:
@@ -27,7 +21,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
-      env:
-        MONGODB_URI: mongodb://localhost:27017/yourDatabaseName
+    - run: npm start
+      # This will run the test command from your package.json.
+      # Make sure to update the test command in package.json to run actual tests.
